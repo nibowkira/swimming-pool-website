@@ -19,6 +19,15 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
   <a
@@ -75,9 +84,11 @@
           <a href="#contact" data-i18n="navContact">Contact</a>
         </div>
       </nav>
+      <video class="hero-video" autoplay muted loop playsinline src="hero-video.mp4"></video>
+      <div class="hero-overlay"></div>
 
       <section class="hero-content">
-        <div class="hero-copy" data-reveal>
+        <div class="hero-copy">
           <p class="eyebrow" data-i18n="heroEyebrow">Luxury Outdoor Living</p>
           <h1 data-i18n="heroTitle">We Build Dream Pools</h1>
           <p class="hero-subheadline" data-i18n="heroSubtitle">Custom Swimming Pool Design, Construction &amp; Maintenance</p>
@@ -130,7 +141,7 @@
           <h2 data-i18n="aboutTitle">Crafting luxurious pool environments with confidence, clarity, and care.</h2>
         </div>
 
-        <div class="about-grid">
+        <div class="about-grid" data-reveal>
           <article class="about-card intro" data-reveal>
             <h3 data-i18n="aboutIntroTitle">Company Introduction</h3>
             <p data-i18n="aboutIntroTextOne">
@@ -214,6 +225,98 @@
           </article>
         </div>
       </section>
+      
+      <section class="section pricing" id="pricing">
+        <div class="section-heading split" data-reveal>
+          <div>
+            <p class="eyebrow" data-i18n="pricingEyebrow">Pricing Packages</p>
+            <h2 data-i18n="pricingTitle">Transparent Pricing for Every Vision</h2>
+          </div>
+          <p class="section-intro" data-i18n="pricingIntro">
+            All packages include free consultation. Final price depends on size, design, and location.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card" data-reveal>
+            <div class="pricing-icon">💬</div>
+            <h3 data-i18n="pricingConsultingTitle">Consulting</h3>
+            <div class="pricing-amount" data-i18n="pricingConsultingAmount">Starting from ETB 5,000</div>
+            <ul class="pricing-features">
+              <li data-i18n="pricingConsultingFeature1">Site visit and assessment</li>
+              <li data-i18n="pricingConsultingFeature2">Expert advice and recommendations</li>
+              <li data-i18n="pricingConsultingFeature3">Project feasibility study</li>
+              <li data-i18n="pricingConsultingFeature4">Budget planning guidance</li>
+              <li data-i18n="pricingConsultingFeature5">Timeline estimation</li>
+            </ul>
+            <a href="https://wa.me/251922729374?text=Hello%20Surax%20Pool!%20I'd%20like%20to%20book%20a%20consulting%20session." class="button button-primary" data-i18n="pricingConsultingCta">Book Now</a>
+          </article>
+
+          <article class="pricing-card" data-reveal>
+            <div class="pricing-icon">📐</div>
+            <h3 data-i18n="pricingDesignTitle">Design</h3>
+            <div class="pricing-amount" data-i18n="pricingDesignAmount">Starting from ETB 15,000</div>
+            <ul class="pricing-features">
+              <li data-i18n="pricingDesignFeature1">Custom pool design concept</li>
+              <li data-i18n="pricingDesignFeature2">3D layout and visual planning</li>
+              <li data-i18n="pricingDesignFeature3">Material and finish selection</li>
+              <li data-i18n="pricingDesignFeature4">Lighting and decking design</li>
+              <li data-i18n="pricingDesignFeature5">Full technical drawings</li>
+            </ul>
+            <a href="https://wa.me/251922729374?text=Hello%20Surax%20Pool!%20I'm%20interested%20in%20your%20pool%20design%20service." class="button button-primary" data-i18n="pricingDesignCta">Get Design</a>
+          </article>
+
+          <article class="pricing-card is-featured" data-reveal>
+            <div class="pricing-badge" data-i18n="pricingConstructionBadge">Most Popular</div>
+            <div class="pricing-icon">🏊</div>
+            <h3 data-i18n="pricingConstructionTitle">Construction</h3>
+            <div class="pricing-amount" data-i18n="pricingConstructionAmount">Starting from ETB 800,000</div>
+            <ul class="pricing-features">
+              <li data-i18n="pricingConstructionFeature1">Complete pool construction</li>
+              <li data-i18n="pricingConstructionFeature2">Premium tiling and finishing</li>
+              <li data-i18n="pricingConstructionFeature3">Plumbing and filtration system</li>
+              <li data-i18n="pricingConstructionFeature4">LED lighting installation</li>
+              <li data-i18n="pricingConstructionFeature5">Decking and surrounds</li>
+              <li data-i18n="pricingConstructionFeature6">1 year warranty</li>
+            </ul>
+            <a href="https://wa.me/251922729374?text=Hello%20Surax%20Pool!%20I'd%20like%20a%20construction%20quote." class="button button-primary" data-i18n="pricingConstructionCta">Get a Quote</a>
+          </article>
+
+          <article class="pricing-card" data-reveal>
+            <div class="pricing-icon">🧹</div>
+            <h3 data-i18n="pricingCleaningTitle">Cleaning</h3>
+            <div class="pricing-amount" data-i18n="pricingCleaningAmount">Starting from ETB 3,000/month</div>
+            <ul class="pricing-features">
+              <li data-i18n="pricingCleaningFeature1">Weekly pool cleaning</li>
+              <li data-i18n="pricingCleaningFeature2">Water chemical balancing</li>
+              <li data-i18n="pricingCleaningFeature3">Filter inspection and cleaning</li>
+              <li data-i18n="pricingCleaningFeature4">Equipment check</li>
+              <li data-i18n="pricingCleaningFeature5">Monthly condition report</li>
+            </ul>
+            <a href="https://wa.me/251922729374?text=Hello%20Surax%20Pool!%20I'm%20interested%20in%20your%20cleaning%20plan." class="button button-primary" data-i18n="pricingCleaningCta">Start Plan</a>
+          </article>
+
+          <article class="pricing-card" data-reveal>
+            <div class="pricing-icon">🔧</div>
+            <h3 data-i18n="pricingMaintenanceTitle">Maintenance</h3>
+            <div class="pricing-amount" data-i18n="pricingMaintenanceAmount">Starting from ETB 8,000/month</div>
+            <ul class="pricing-features">
+              <li data-i18n="pricingMaintenanceFeature1">Everything in Cleaning plan</li>
+              <li data-i18n="pricingMaintenanceFeature2">Equipment repairs and replacement</li>
+              <li data-i18n="pricingMaintenanceFeature3">Water pump servicing</li>
+              <li data-i18n="pricingMaintenanceFeature4">Lighting maintenance</li>
+              <li data-i18n="pricingMaintenanceFeature5">Priority emergency response</li>
+              <li data-i18n="pricingMaintenanceFeature6">Dedicated account manager</li>
+            </ul>
+            <a href="https://wa.me/251922729374?text=Hello%20Surax%20Pool!%20I'm%20interested%20in%20your%20maintenance%20plan." class="button button-primary" data-i18n="pricingMaintenanceCta">Start Plan</a>
+          </article>
+        </div>
+
+        <p class="pricing-disclaimer" data-reveal data-i18n="pricingDisclaimer">
+          All prices are starting rates. Final pricing depends on pool size, design complexity, 
+          materials, and project location. Contact us for a free detailed quote.
+        </p>
+      </section>
 
       <section class="section comparison" id="comparison">
         <div class="section-heading split" data-reveal>
@@ -229,19 +332,11 @@
         <div class="comparison-showcase" data-reveal>
           <div class="comparison-card">
             <div class="comparison-stage" id="comparison-stage" style="--comparison-position: 52%;">
-              <img
-                class="comparison-image comparison-image-before"
-                src="pool-before-after.jpg"
-                alt="Swimming pool before renovation"
-                loading="lazy"
-              >
+              <img class="comparison-image comparison-image-before" src="pool-before-after.jpg" alt="Swimming pool before renovation" loading="lazy">
+
               <div class="comparison-after-layer">
-                <img
-                  class="comparison-image comparison-image-after"
-                  src="pool-before-after.jpg"
-                  alt="Swimming pool after renovation"
-                  loading="lazy"
-                >
+                <img class="comparison-image comparison-image-after" src="pool-before-after.jpg" alt="Swimming pool after renovation" loading="lazy">
+
               </div>
               <div class="comparison-divider" aria-hidden="true">
                 <span class="comparison-handle">↔</span>
@@ -289,24 +384,25 @@
           </p>
         </div>
 
-        <div class="gallery-grid-premium" data-reveal>
-          <button class="gallery-item gallery-item-large lightbox-trigger" type="button" data-index="0" data-caption-key="galleryCaptionOne">
+        <div class="gallery-grid-premium">
+          <button class="gallery-item gallery-item-large lightbox-trigger" type="button" data-index="0" data-caption-key="galleryCaptionOne" data-reveal="scale-up" data-delay="0">
             <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1400&q=80" alt="Modern luxury swimming pool with clean blue water" loading="lazy">
             <span data-i18n="galleryCaptionOne">Modern residential pool with crisp blue water and refined geometry.</span>
           </button>
-          <button class="gallery-item lightbox-trigger" type="button" data-index="1" data-caption-key="galleryCaptionTwo">
+          <button class="gallery-item lightbox-trigger" type="button" data-index="1" data-caption-key="galleryCaptionTwo" data-reveal="scale-up" data-delay="100">
             <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Backyard swimming pool with elegant landscaping" loading="lazy">
             <span data-i18n="galleryCaptionTwo">Backyard pool framed with clean paving and soft landscaping.</span>
           </button>
-          <button class="gallery-item lightbox-trigger" type="button" data-index="2" data-caption-key="galleryCaptionThree">
+          <button class="gallery-item lightbox-trigger" type="button" data-index="2" data-caption-key="galleryCaptionThree" data-reveal="scale-up" data-delay="200">
             <img src="pool-home-before.jpg" alt="Home pool under construction before completion" loading="lazy">
             <span data-i18n="galleryCaptionThree">The same home pool during construction before the final finish.</span>
           </button>
-          <button class="gallery-item lightbox-trigger" type="button" data-index="3" data-caption-key="galleryCaptionFour">
+          <button class="gallery-item lightbox-trigger" type="button" data-index="3" data-caption-key="galleryCaptionFour" data-reveal="scale-up" data-delay="300">
             <img src="pool-home-after.jpg" alt="Finished home pool after construction" loading="lazy">
             <span data-i18n="galleryCaptionFour">The completed home pool after construction with a clean finished result.</span>
           </button>
         </div>
+
       </section>
 
       <section class="section reviews" id="reviews">
@@ -420,7 +516,7 @@
                 “Surax Pool transformed our backyard into a private retreat. The process felt organized,
                 premium, and completely professional from start to finish.”
               </p>
-              <strong>Sarah M.</strong>
+              <strong>Mekdes A.</strong>
             </article>
             <article class="testimonial-card">
               <div class="stars" aria-label="5 star rating">★★★★★</div>
@@ -428,7 +524,7 @@
                 “The renovation exceeded expectations. Every finish looks high-end, and their maintenance
                 team keeps the pool looking immaculate every week.”
               </p>
-              <strong>Daniel R.</strong>
+              <strong>Dawit T.</strong>
             </article>
             <article class="testimonial-card">
               <div class="stars" aria-label="5 star rating">★★★★★</div>
@@ -436,7 +532,7 @@
                 “We chose Surax Pool because of their design sense and attention to detail. They delivered
                 exactly the luxury feel we were hoping for.”
               </p>
-              <strong>Leila T.</strong>
+              <strong>Hiwot G.</strong>
             </article>
           </div>
 
@@ -459,7 +555,7 @@
           <a class="button button-secondary" href="https://www.google.com/maps/dir/?api=1&destination=Addis%20Ababa%20Ethiopia" target="_blank" rel="noreferrer" data-i18n="directionsButton">Get Google Maps Directions</a>
         </div>
 
-        <div class="faq-grid">
+        <div class="faq-grid" data-reveal>
           <details class="faq-item" data-reveal>
             <summary data-i18n="faqOneQ">How long does a new pool project usually take?</summary>
             <p data-i18n="faqOneA">Most projects take several weeks depending on design complexity, site conditions, and finishing selections.</p>
@@ -480,7 +576,7 @@
       </section>
 
       <section class="section contact" id="contact">
-        <div class="contact-grid">
+        <div class="contact-grid" data-reveal>
           <div class="contact-copy" data-reveal>
             <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
             <h2 data-i18n="contactTitle">Start planning your next signature pool project.</h2>
@@ -490,9 +586,9 @@
 
             <div class="contact-details">
               <a href="tel:0922729374" data-i18n="contactPhone">Phone: 0922729374</a>
-              <a href="mailto:tadessenibowkira@gmail.com" data-i18n="contactEmail">Email: tadessenibowkira@gmail.com</a>
+              <a href="mailto:suraxpool@gmail.com" data-i18n="contactEmail">Email: suraxpool@gmail.com</a>
               <p data-i18n="contactLocation">Location: Bole Road, Addis Ababa, Ethiopia</p>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=Addis%20Ababa%20Ethiopia" target="_blank" rel="noreferrer" data-i18n="contactDirections">Open Directions</a>
+              <a href="https://www.google.com/maps?q=Bole+Road,+Addis+Ababa,+Ethiopia&z=15&output=embed" target="_blank" rel="noreferrer" data-i18n="contactDirections">Open Directions</a>
             </div>
           </div>
 
@@ -510,7 +606,7 @@
             <div class="field-row">
               <label>
                 <span data-i18n="fieldPhone">Phone</span>
-                <input type="tel" name="phone" data-i18n-placeholder="fieldPhonePlaceholder" placeholder="+251 9xx xxx xxx">
+                <input type="tel" name="phone" data-i18n-placeholder="fieldPhonePlaceholder" placeholder="+251 9xx xxx xxx" required>
               </label>
               <label>
                 <span data-i18n="fieldProjectType">Project Type</span>
@@ -533,7 +629,7 @@
         <div class="map-frame" data-reveal>
           <iframe
             title="Surax Pool location"
-            src="https://www.google.com/maps?q=Addis%20Ababa%20Ethiopia&z=12&output=embed"
+            src="https://www.google.com/maps?q=Bole+Road,+Addis+Ababa,+Ethiopia&z=15&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
@@ -561,9 +657,8 @@
         </div>
         <div>
           <h3 data-i18n="footerSocial">Social</h3>
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/suraxswimmingpool" target="_blank" rel="noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@suraxpool" target="_blank" rel="noreferrer"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
 

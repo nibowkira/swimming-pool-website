@@ -1,5 +1,6 @@
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
+const nav = document.querySelector(".nav");
 const revealItems = document.querySelectorAll("[data-reveal]");
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector(".contact-form .form-status");
@@ -31,6 +32,7 @@ const translations = {
   en: {
     navAbout: "About",
     navServices: "Services",
+    navPricing: "Pricing",
     navGallery: "Gallery",
     navTestimonials: "Testimonials",
     navFaq: "FAQ",
@@ -139,6 +141,53 @@ const translations = {
     testimonialOne: "\"Surax Pool transformed our backyard into a private retreat. The process felt organized, premium, and completely professional from start to finish.\"",
     testimonialTwo: "\"The renovation exceeded expectations. Every finish looks high-end, and their maintenance team keeps the pool looking immaculate every week.\"",
     testimonialThree: "\"We chose Surax Pool because of their design sense and attention to detail. They delivered exactly the luxury feel we were hoping for.\"",
+    pricingEyebrow: "Pricing Packages",
+    pricingTitle: "Transparent Pricing for Every Vision",
+    pricingIntro: "All packages include free consultation. Final price depends on size, design, and location.",
+    pricingConsultingTitle: "Consulting",
+    pricingConsultingAmount: "Starting from ETB 5,000",
+    pricingConsultingFeature1: "Site visit and assessment",
+    pricingConsultingFeature2: "Expert advice and recommendations",
+    pricingConsultingFeature3: "Project feasibility study",
+    pricingConsultingFeature4: "Budget planning guidance",
+    pricingConsultingFeature5: "Timeline estimation",
+    pricingConsultingCta: "Book Now",
+    pricingDesignTitle: "Design",
+    pricingDesignAmount: "Starting from ETB 15,000",
+    pricingDesignFeature1: "Custom pool design concept",
+    pricingDesignFeature2: "3D layout and visual planning",
+    pricingDesignFeature3: "Material and finish selection",
+    pricingDesignFeature4: "Lighting and decking design",
+    pricingDesignFeature5: "Full technical drawings",
+    pricingDesignCta: "Get Design",
+    pricingConstructionTitle: "Construction",
+    pricingConstructionAmount: "Starting from ETB 800,000",
+    pricingConstructionBadge: "Most Popular",
+    pricingConstructionFeature1: "Complete pool construction",
+    pricingConstructionFeature2: "Premium tiling and finishing",
+    pricingConstructionFeature3: "Plumbing and filtration system",
+    pricingConstructionFeature4: "LED lighting installation",
+    pricingConstructionFeature5: "Decking and surrounds",
+    pricingConstructionFeature6: "1 year warranty",
+    pricingConstructionCta: "Get a Quote",
+    pricingCleaningTitle: "Cleaning",
+    pricingCleaningAmount: "Starting from ETB 3,000/month",
+    pricingCleaningFeature1: "Weekly pool cleaning",
+    pricingCleaningFeature2: "Water chemical balancing",
+    pricingCleaningFeature3: "Filter inspection and cleaning",
+    pricingCleaningFeature4: "Equipment check",
+    pricingCleaningFeature5: "Monthly condition report",
+    pricingCleaningCta: "Start Plan",
+    pricingMaintenanceTitle: "Maintenance",
+    pricingMaintenanceAmount: "Starting from ETB 8,000/month",
+    pricingMaintenanceFeature1: "Everything in Cleaning plan",
+    pricingMaintenanceFeature2: "Equipment repairs and replacement",
+    pricingMaintenanceFeature3: "Water pump servicing",
+    pricingMaintenanceFeature4: "Lighting maintenance",
+    pricingMaintenanceFeature5: "Priority emergency response",
+    pricingMaintenanceFeature6: "Dedicated account manager",
+    pricingMaintenanceCta: "Start Plan",
+    pricingDisclaimer: "All prices are starting rates. Final pricing depends on pool size, design complexity, materials, and project location. Contact us for a free detailed quote.",
     faqEyebrow: "FAQ",
     faqTitle: "Helpful answers for planning a pool project or maintenance visit.",
     directionsButton: "Get Google Maps Directions",
@@ -154,7 +203,7 @@ const translations = {
     contactTitle: "Start planning your next signature pool project.",
     contactIntro: "Tell us about your property, your vision, and the kind of pool experience you want to create.",
     contactPhone: "Phone: 0922729374",
-    contactEmail: "Email: tadessenibowkira@gmail.com",
+    contactEmail: "Email: suraxpool@gmail.com",
     contactLocation: "Location: Bole Road, Addis Ababa, Ethiopia",
     contactDirections: "Open Directions",
     fieldName: "Name",
@@ -169,9 +218,9 @@ const translations = {
     fieldMessage: "Message",
     fieldMessagePlaceholder: "Tell us about your pool project",
     contactSubmit: "Send Inquiry",
-    formStatusPreparing: "Opening your email app…",
-    formStatusMailtoSuccess:
-      "Your email app should open with your inquiry. Send the message from there to complete your request.",
+    formStatusPreparing: "Preparing your inquiry…",
+    formStatusSuccess: "Thank you! We will contact you shortly.",
+    formStatusError: "Please fill in all required fields.",
     formImageHint: "Please attach your selected site photo in the email before sending.",
     footerText: "Luxury swimming pool design, construction, renovation, and maintenance for modern properties.",
     footerQuickLinks: "Quick Links",
@@ -181,6 +230,7 @@ const translations = {
   am: {
     navAbout: "ስለ እኛ",
     navServices: "አገልግሎቶች",
+    navPricing: "ዋጋ",
     navGallery: "ጋለሪ",
     navTestimonials: "የደንበኛ አስተያየቶች",
     navFaq: "ጥያቄዎች",
@@ -289,6 +339,53 @@ const translations = {
     testimonialOne: "\"ሱራክስ ፑል ጀርባ ቦታችንን የግል ማረፊያ አደረገው። ሂደቱ በጣም የተደራጀ እና ባለሙያ ነበር።\"",
     testimonialTwo: "\"እድሳቱ ከተጠበቀው በላይ ነበር። እያንዳንዱ አጨራረስ ከፍተኛ ደረጃ ያለው ይመስላል።\"",
     testimonialThree: "\"በዲዛይናቸው እና በዝርዝር ትኩረታቸው ምክንያት ሱራክስ ፑልን መረጥን። የፈለግነውን የቅንጦት ስሜት ሰጡን።\"",
+    pricingEyebrow: "የዋጋ ጥቅሎች",
+    pricingTitle: "ለእያንዳንዱ ራዕይ ግልጽ ዋጋ",
+    pricingIntro: "ሁሉም ጥቅሎች ነጻ ምክክርን ያካትታሉ። የመጨረሻው ዋጋ እንደ ገንዳው መጠን፣ ዲዛይን እና ቦታ ይወሰናል።",
+    pricingConsultingTitle: "ምክር",
+    pricingConsultingAmount: "ከ 5,000 ብር ጀምሮ",
+    pricingConsultingFeature1: "የቦታ ጉብኝት እና ግምገማ",
+    pricingConsultingFeature2: "የባለሙያ ምክር እና ጥቆማዎች",
+    pricingConsultingFeature3: "የፕሮጀክት አዋጭነት ጥናት",
+    pricingConsultingFeature4: "የበጀት እቅድ መመሪያ",
+    pricingConsultingFeature5: "የጊዜ ግምት",
+    pricingConsultingCta: "አሁን ይያዙ",
+    pricingDesignTitle: "ዲዛይን",
+    pricingDesignAmount: "ከ 15,000 ብር ጀምሮ",
+    pricingDesignFeature1: "ብጁ የገንዳ ዲዛይን ኮንሴፕት",
+    pricingDesignFeature2: "3D እቅድ እና ምስላዊ እቅድ",
+    pricingDesignFeature3: "የንጥረ ነገር እና አጨራረስ ምርጫ",
+    pricingDesignFeature4: "የመብራት እና የዴክ ዲዛይን",
+    pricingDesignFeature5: "ሙሉ ቴክኒካዊ ስዕሎች",
+    pricingDesignCta: "ዲዛይን ያግኙ",
+    pricingConstructionTitle: "ግንባታ",
+    pricingConstructionAmount: "ከ 800,000 ብር ጀምሮ",
+    pricingConstructionBadge: "በጣም ተወዳጅ",
+    pricingConstructionFeature1: "የተሟላ የገንዳ ግንባታ",
+    pricingConstructionFeature2: "ከፍተኛ ደረጃ ንጣፍ እና አጨራረስ",
+    pricingConstructionFeature3: "የፓይፕ እና የማጣሪያ ስርዓት",
+    pricingConstructionFeature4: "የኤልኢዲ መብራት ተከላ",
+    pricingConstructionFeature5: "ዴክ እና ዙሪያ ስራዎች",
+    pricingConstructionFeature6: "የ 1 ዓመት ዋስትና",
+    pricingConstructionCta: "ዋጋ ይጠይቁ",
+    pricingCleaningTitle: "ማጽዳት",
+    pricingCleaningAmount: "በወር ከ 3,000 ብር ጀምሮ",
+    pricingCleaningFeature1: "ሳምንታዊ የገንዳ ማጽዳት",
+    pricingCleaningFeature2: "የውሃ ኬሚካል ሚዛን",
+    pricingCleaningFeature3: "የፊልተር ምርመራ እና ማጽዳት",
+    pricingCleaningFeature4: "የመሳሪያዎች ምርመራ",
+    pricingCleaningFeature5: "ወርሃዊ የሁኔታ ሪፖርት",
+    pricingCleaningCta: "እቅድ ይጀምሩ",
+    pricingMaintenanceTitle: "ጥገና",
+    pricingMaintenanceAmount: "በወር ከ 8,000 ብር ጀምሮ",
+    pricingMaintenanceFeature1: "በማጽዳት እቅድ ውስጥ ያለ ሁሉ",
+    pricingMaintenanceFeature2: "የመሳሪያዎች ጥገና እና መተካት",
+    pricingMaintenanceFeature3: "የውሃ ፓምፕ አገልግሎት",
+    pricingMaintenanceFeature4: "የመብራት ጥገና",
+    pricingMaintenanceFeature5: "የቅድሚያ ድንገተኛ ምላሽ",
+    pricingMaintenanceFeature6: "የተመደበ የእቅድ ስራ አስኪያጅ",
+    pricingMaintenanceCta: "እቅድ ይጀምሩ",
+    pricingDisclaimer: "ሁሉም ዋጋዎች መነሻ ናቸው። የመጨረሻው ዋጋ እንደ ገንዳው መጠን፣ የዲዛይን ውስብስብነት፣ ጥቅም ላይ የሚውሉ ቁሳቁሶች እና የፕሮጀክት ቦታ ይወሰናል። ለዝርዝር ዋጋ ያግኙን።",
     faqEyebrow: "ጥያቄዎች",
     faqTitle: "የገንዳ ፕሮጀክት ወይም የጥገና ጉብኝት ለማቀድ የሚረዱ መልሶች።",
     directionsButton: "በጎግል ካርታ አቅጣጫ ያግኙ",
@@ -304,7 +401,7 @@ const translations = {
     contactTitle: "የሚቀጥለውን የቅንጦት ገንዳ ፕሮጀክት ይጀምሩ።",
     contactIntro: "ስለ ንብረትዎ፣ ራዕይዎ እና የሚፈልጉት የገንዳ ልምድ ያሳውቁን።",
     contactPhone: "ስልክ: 0922729374",
-    contactEmail: "ኢሜይል: tadessenibowkira@gmail.com",
+    contactEmail: "ኢሜይል: suraxpool@gmail.com",
     contactLocation: "አድራሻ: ቦሌ ሮድ፣ አዲስ አበባ፣ ኢትዮጵያ",
     contactDirections: "አቅጣጫ ክፈት",
     fieldName: "ስም",
@@ -319,8 +416,9 @@ const translations = {
     fieldMessage: "መልእክት",
     fieldMessagePlaceholder: "ስለ ገንዳ ፕሮጀክትዎ ይግለጹ",
     contactSubmit: "ጥያቄ ላክ",
-    formStatusPreparing: "የኢሜይል መተግበሪያዎን እየከፈቱ…",
-    formStatusMailtoSuccess: "የኢሜይል መተግበሪያ ከተከፈተ ጥያቄዎን ከእዚያ በመላክ ያጠናቅቁ።",
+    formStatusPreparing: "ጥያቄዎን እያዘጋጀን ነው…",
+    formStatusSuccess: "እናመሰግናለን! በቅርቡ እናገኝዎታለን።",
+    formStatusError: "እባክዎ ሁሉንም አስፈላጊ መረጃዎች ያስገቡ።",
     formImageHint: "ከመላኩ በፊት የመረጡትን የቦታ ፎቶ በኢሜይል ያያይዙ።",
     footerText: "ለዘመናዊ ንብረቶች የቅንጦት የመዋኛ ገንዳ ዲዛይን፣ ግንባታ፣ እድሳት እና ጥገና።",
     footerQuickLinks: "ፈጣን አገናኞች",
@@ -493,6 +591,14 @@ function setLanguage(language) {
   updateThemeToggleText();
   renderUserReviews();
   localStorage.setItem("surax-language", language);
+}
+
+if (nav) {
+  const updateStickyNav = () => {
+    nav.classList.toggle("is-sticky", window.scrollY > 14);
+  };
+  window.addEventListener("scroll", updateStickyNav, { passive: true });
+  updateStickyNav();
 }
 
 langButtons.forEach((button) => {
@@ -846,57 +952,47 @@ if (lightbox && galleryTriggers.length > 0) {
 }
 
 if (contactForm && formStatus) {
-  const CONTACT_EMAIL = "tadessenibowkira@gmail.com";
-  const MAX_MAILTO_CHARS = 1950;
-
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const bundle = translations[currentLanguage] || translations.en;
+    
+    const fd = new FormData(contactForm);
+    const name = (fd.get("name") || "").toString().trim();
+    const email = (fd.get("email") || "").toString().trim();
+    const phone = (fd.get("phone") || "").toString().trim();
+    const projectType = (fd.get("projectType") || "").toString().trim();
+    const message = (fd.get("message") || "").toString().trim();
+
+    if (!name || !email || !phone || !message) {
+      formStatus.textContent = bundle.formStatusError;
+      formStatus.classList.remove("is-success");
+      formStatus.classList.add("is-error");
+      return;
+    }
+
     formStatus.textContent = bundle.formStatusPreparing;
-    formStatus.classList.remove("is-success");
+    formStatus.classList.remove("is-error", "is-success");
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (submitButton) {
       submitButton.disabled = true;
     }
 
-    const fd = new FormData(contactForm);
-    const name = (fd.get("name") || "").toString().trim();
-    const email = (fd.get("email") || "").toString().trim();
-    const phone = (fd.get("phone") || "").toString().trim();
-    const projectType = (fd.get("projectType") || "").toString().trim();
-    let message = (fd.get("message") || "").toString().trim();
-    const fileInput = contactForm.querySelector('input[name="projectImage"]');
-    const hasFile = Boolean(fileInput?.files?.length);
+    const whatsappMessage = [
+      "Hello Surax Pool! 🏊",
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Project Type: ${projectType || "—"}`,
+      `Message: ${message}`
+    ].join("\n");
 
-    const subject = `Surax Pool inquiry from ${name}`;
-    const buildBody = (msg) => {
-      let text = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone || "—"}`,
-        `Project type: ${projectType || "—"}`,
-        "",
-        "Message:",
-        msg,
-      ].join("\n");
-      if (hasFile) {
-        text += `\n\n${bundle.formImageHint}`;
-      }
-      return text;
-    };
+    const whatsappUrl = `https://wa.me/251922729374?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappUrl, "_blank");
 
-    let body = buildBody(message);
-    let mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    while (mailto.length > MAX_MAILTO_CHARS && message.length > 80) {
-      message = `${message.slice(0, Math.floor(message.length * 0.85))}\n\n[Message truncated—add any missing details in your email.]`;
-      body = buildBody(message);
-      mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    }
-
-    window.location.href = mailto;
-
-    formStatus.textContent = bundle.formStatusMailtoSuccess;
+    formStatus.textContent = bundle.formStatusSuccess;
     formStatus.classList.add("is-success");
     contactForm.reset();
 
@@ -905,3 +1001,4 @@ if (contactForm && formStatus) {
     }
   });
 }
+
