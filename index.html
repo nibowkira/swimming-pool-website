@@ -817,66 +817,85 @@
               </div>
             </div>
 
-            <!-- Right: Control Dashboard -->
+            <!-- Right: Control Dashboard (Legendary Glass) -->
             <div class="visualizer-dashboard" data-reveal="scale-up">
               <div class="dashboard-header">
-                <p class="eyebrow">Studio Mode</p>
-                <h3>Design Your Masterpiece</h3>
+                <div class="studio-badge">ULTRA-STUDIO 2.0</div>
+                <h3>Architectural Visualizer</h3>
+                <p class="eyebrow-small">SYSTEM ACTIVE // CALIBRATED</p>
               </div>
 
               <div class="dashboard-controls">
-                <!-- Group 1: Lighting -->
+                <!-- Group 1: Environment -->
+                <div class="control-group">
+                  <div class="group-header">
+                    <p class="control-label">Atmosphere Calibration</p>
+                    <span class="control-value" id="atmosphere-label">Midday</span>
+                  </div>
+                  <input type="range" class="studio-slider" id="atmosphere-slider" min="0" max="100" value="50">
+                </div>
+
+                <!-- Group 2: View Mode -->
+                <div class="control-group">
+                  <p class="control-label">Visualization Layer</p>
+                  <div class="mode-toggle-group">
+                    <button class="mode-btn is-active" data-mode="render">Photoreal</button>
+                    <button class="mode-btn" data-mode="blueprint">Architectural</button>
+                  </div>
+                </div>
+
+                <!-- Group 3: Lighting FX -->
                 <div class="control-group">
                   <p class="control-label">Lighting Environment</p>
                   <div class="swatch-scroll-container">
-                    <button class="visualizer-btn is-active" data-type="lighting" data-value="day" title="Midday Sun">
+                    <button class="visualizer-btn is-active" data-type="lighting" data-value="day">
                       <i class="fas fa-sun"></i>
-                      <span>Day</span>
+                      <span>High Noon</span>
                     </button>
-                    <button class="visualizer-btn" data-type="lighting" data-value="twilight" title="Golden Hour">
+                    <button class="visualizer-btn" data-type="lighting" data-value="twilight">
                       <i class="fas fa-cloud-sun"></i>
-                      <span>Sunset</span>
+                      <span>Golden</span>
                     </button>
-                    <button class="visualizer-btn" data-type="lighting" data-value="night" title="Midnight Glow">
+                    <button class="visualizer-btn" data-type="lighting" data-value="night">
                       <i class="fas fa-moon"></i>
-                      <span>Night</span>
+                      <span>Midnight</span>
                     </button>
                   </div>
                 </div>
 
-                <!-- Group 2: Material -->
+                <!-- Group 4: Surface Texture -->
                 <div class="control-group">
                   <p class="control-label">Surface Material</p>
                   <div class="swatch-scroll-container">
                     <button class="texture-btn is-active" data-type="texture" data-value="crystal" data-label="Crystal Mosaic">
-                      <div class="texture-preview" style="background: linear-gradient(45deg, #00d2ff, #3a7bd5);"></div>
+                      <div class="texture-preview mosaic-tile"></div>
                       <span>Mosaic</span>
                     </button>
                     <button class="texture-btn" data-type="texture" data-value="marble" data-label="Midnight Marble">
-                      <div class="texture-preview" style="background: linear-gradient(45deg, #2c3e50, #000000);"></div>
+                      <div class="texture-preview marble-tile"></div>
                       <span>Marble</span>
                     </button>
                     <button class="texture-btn" data-type="texture" data-value="emerald" data-label="Natural Stone">
-                      <div class="texture-preview" style="background: linear-gradient(45deg, #11998e, #38ef7d);"></div>
-                      <span>Stone</span>
+                      <div class="texture-preview stone-tile"></div>
+                      <span>Slate</span>
                     </button>
                   </div>
                 </div>
 
-                <!-- Group 3: Effects -->
+                <!-- Group 5: Core Dynamics -->
                 <div class="control-group">
                   <label class="toggle-switch">
                     <input type="checkbox" id="toggle-caustics" checked>
                     <span class="toggle-slider"></span>
-                    <span class="toggle-label">Active Water Effects</span>
+                    <span class="toggle-label">Render Water Dynamics</span>
                   </label>
                 </div>
               </div>
 
               <div class="dashboard-footer">
                 <button class="button-primary-luxury" id="visualizer-whatsapp-btn">
-                   Request This Design
-                   <i class="fab fa-whatsapp"></i>
+                   <span>INITIATE DESIGN REQUEST</span>
+                   <i class="fas fa-paper-plane"></i>
                 </button>
               </div>
             </div>
