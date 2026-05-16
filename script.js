@@ -833,14 +833,17 @@ function updateThemeToggleText() {
 
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
+    const isActive = navLinks.classList.toggle("is-active");
+    navToggle.classList.toggle("is-active"); // For the kinetic X animation
+    navToggle.setAttribute("aria-expanded", String(isActive));
+    document.body.classList.toggle("menu-open", isActive);
   });
 
+  // Auto-close menu when a link is clicked
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      navLinks.classList.remove("is-open");
+      navLinks.classList.remove("is-active");
+      navToggle.classList.remove("is-active");
       navToggle.setAttribute("aria-expanded", "false");
       document.body.classList.remove("menu-open");
     });
