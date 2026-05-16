@@ -811,7 +811,7 @@
                   </div>
                   <div class="hud-item">
                     <span class="hud-label">Material</span>
-                    <span class="hud-value" id="hud-material">Crystal Clear</span>
+                    <span class="hud-value" id="hud-material">Crystal Mosaic</span>
                   </div>
                 </div>
               </div>
@@ -820,31 +820,34 @@
             <!-- Right: Control Dashboard -->
             <div class="visualizer-dashboard" data-reveal="scale-up">
               <div class="dashboard-header">
-                <p class="eyebrow" style="color: var(--accent);">Visualizer Studio</p>
+                <p class="eyebrow">Studio Mode</p>
                 <h3>Design Your Masterpiece</h3>
               </div>
 
               <div class="dashboard-controls">
-                <!-- Group 1: Time of Day (Lighting) -->
+                <!-- Group 1: Lighting -->
                 <div class="control-group">
-                  <p class="control-label">Solar Position (Lighting)</p>
-                  <div class="swatch-grid">
+                  <p class="control-label">Lighting Environment</p>
+                  <div class="swatch-scroll-container">
                     <button class="visualizer-btn is-active" data-type="lighting" data-value="day" title="Midday Sun">
                       <i class="fas fa-sun"></i>
+                      <span>Day</span>
                     </button>
                     <button class="visualizer-btn" data-type="lighting" data-value="twilight" title="Golden Hour">
                       <i class="fas fa-cloud-sun"></i>
+                      <span>Sunset</span>
                     </button>
                     <button class="visualizer-btn" data-type="lighting" data-value="night" title="Midnight Glow">
                       <i class="fas fa-moon"></i>
+                      <span>Night</span>
                     </button>
                   </div>
                 </div>
 
-                <!-- Group 2: Water Texture -->
+                <!-- Group 2: Material -->
                 <div class="control-group">
-                  <p class="control-label">Interior Material</p>
-                  <div class="texture-grid">
+                  <p class="control-label">Surface Material</p>
+                  <div class="swatch-scroll-container">
                     <button class="texture-btn is-active" data-type="texture" data-value="crystal" data-label="Crystal Mosaic">
                       <div class="texture-preview" style="background: linear-gradient(45deg, #00d2ff, #3a7bd5);"></div>
                       <span>Mosaic</span>
@@ -860,19 +863,21 @@
                   </div>
                 </div>
 
-                <!-- Group 3: Special Effects -->
+                <!-- Group 3: Effects -->
                 <div class="control-group">
-                  <p class="control-label">Environment Effects</p>
                   <label class="toggle-switch">
                     <input type="checkbox" id="toggle-caustics" checked>
                     <span class="toggle-slider"></span>
-                    <span class="toggle-label">Active Water Caustics</span>
+                    <span class="toggle-label">Active Water Effects</span>
                   </label>
                 </div>
               </div>
 
               <div class="dashboard-footer">
-                <button class="button-primary-luxury" id="visualizer-whatsapp-btn">Request This Design</button>
+                <button class="button-primary-luxury" id="visualizer-whatsapp-btn">
+                   Request This Design
+                   <i class="fab fa-whatsapp"></i>
+                </button>
               </div>
             </div>
           </div>
