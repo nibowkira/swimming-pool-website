@@ -1756,22 +1756,25 @@ body.theme-dark .button-secondary:focus-visible {
 .gallery-grid-premium {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 180px;
-  gap: 16px;
-  padding: 20px 0;
+  grid-auto-rows: 160px;
+  gap: 0; /* Zero gap for seamless collage */
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
 }
 
 @media (max-width: 600px) {
   .gallery-grid-premium {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 140px;
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-auto-rows: 80px;
+    gap: 4px;
   }
   .gallery-item-large,
   .gallery-item-wide,
   .gallery-item-tall {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
 
@@ -1794,102 +1797,42 @@ body.theme-dark .button-secondary:focus-visible {
   overflow: hidden;
   cursor: pointer;
   background: var(--bg-soft);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--line);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator */
 }
 
 .gallery-item:hover {
   z-index: 10;
-  transform: translateY(-8px);
+  transform: scale(1.05);
   box-shadow: var(--shadow-strong);
-  border-color: var(--accent);
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: grayscale(20%) contrast(1.05);
 }
 
 .gallery-item:hover img {
-  transform: scale(1.15);
-}
-
-.gallery-item span {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
-  color: #fff;
-  display: flex;
-  align-items: flex-end;
-  padding: 24px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  z-index: 2;
-  backdrop-filter: blur(2px);
-}
-
-.gallery-item:hover span {
-  opacity: 1;
-  transform: translateY(0);
+  transform: scale(1.1);
+  filter: grayscale(0%) contrast(1.1);
 }
 
 /* Bento Grid Spacing */
-.gallery-item-large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
+ .gallery-item-large {
+  grid-column: span 1;
+  grid-row: span 1;
+ }
 
-.gallery-item-wide {
-  grid-column: span 2;
-}
+ .gallery-item-wide {
+  grid-column: span 1;
+ }
 
-.gallery-item-tall {
-  grid-row: span 2;
-}
-
-/* Gallery Filter Refinement */
-.gallery-filters {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-}
-
-.gallery-filter-btn {
-  padding: 12px 28px;
-  border-radius: 999px;
-  border: 1px solid var(--line-strong);
-  background: var(--surface);
-  color: var(--text);
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(8px);
-}
-
-.gallery-filter-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  transform: translateY(-2px);
-}
-
-.gallery-filter-btn.is-active {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  box-shadow: 0 10px 25px rgba(13, 125, 184, 0.35);
-}
+ .gallery-item-tall {
+  grid-row: span 1;
+ }
 
 /* ==========================================================================
    Premium Visualizer Dashboard Overhaul
@@ -2033,7 +1976,46 @@ body.theme-dark .toggle-slider {
   box-shadow: var(--ring);
 }
 
+.gallery-item span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(13, 125, 184, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  pointer-events: none;
+}
 
+.gallery-item:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay Glass Effect on Hover */
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 125, 184, 0.15);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
 
 .lightbox {
   position: fixed;
