@@ -1755,27 +1755,17 @@ body.theme-dark .button-secondary:focus-visible {
 
 .gallery-grid-premium {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 200px;
-  gap: 4px; /* Ultra-tight for mosaic look */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+  gap: 20px;
   background: var(--bg);
-  padding: 4px;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .gallery-grid-premium {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery-grid-premium {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 140px;
-    gap: 2px;
-    padding: 2px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
