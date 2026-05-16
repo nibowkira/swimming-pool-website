@@ -157,7 +157,9 @@ body {
   background-attachment: fixed;
 }
 
-
+::selection {
+  background: rgba(13, 125, 184, 0.25);
+}
 
 body.menu-open {
   overflow: hidden;
@@ -481,17 +483,20 @@ input:checked + .toggle-slider::after {
 @media (max-width: 992px) {
   .visualizer-studio-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .nav-links {
-    padding: 80px 20px;
   }
 }
 
 
 
-
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #0c2b40 0%, #07131b 100%);
+}
 
 .hero-content {
   position: relative;
@@ -599,7 +604,7 @@ input:checked + .toggle-slider::after {
   z-index: 2;
   max-width: 800px;
 }
-
+  z-index: 1;
 }
 
 .nav, .hero-content {
@@ -621,7 +626,11 @@ body.theme-dark .hero::after {
   z-index: 3;
 }
 
-
+.nav,
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
 
 .nav {
   position: fixed;
@@ -644,53 +653,6 @@ body.theme-dark .hero::after {
 }
 
 @media (max-width: 992px) {
-  .visualizer-studio-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .nav-links {
-    padding: 80px 20px;
-  }
-
-  .nav {
-    height: 56px;
-    padding: 0 16px;
-  }
-
-  .hero {
-    padding: 20px 24px;
-    min-height: 70vh;
-    background-position: center;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-metrics-floating {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    padding: 16px 24px;
-  }
-
-  .visualizer-preview-container {
-    height: 300px;
-  }
-
-  .visualizer-dashboard, .control-group {
-    gap: 20px;
-  }
-
-  .texture-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .nav-links {
     position: fixed;
     top: 0;
@@ -849,73 +811,6 @@ body.theme-dark .nav.nav-scrolled {
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-/* ---------------------------------------------------------------
-   Ultra‑mobile (≤600px) – Legendary responsive tweaks
-   --------------------------------------------------------------- */
-@media (max-width: 600px) {
-  /* Typography – fluid scaling */
-  .hero h1 {
-    font-size: clamp(2rem, 12vw, 3.5rem);
-  }
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-  .metric-item strong {
-    font-size: 1.5rem;
-  }
-
-  /* Touch targets – minimum 48px */
-  .visualizer-btn,
-  .texture-btn,
-  .toggle-switch {
-    min-width: 48px;
-    min-height: 48px;
-  }
-
-  /* Grid – single column for most components */
-  .visualizer-studio-grid,
-  .texture-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Hero – tighter padding and full‑width background */
-  .hero {
-    padding: 12px 16px;
-    background-position: top center;
-  }
-
-  /* Metrics – stack vertically with full width */
-  .hero-metrics-floating {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding: 12px 16px;
-  }
-
-  /* Nav – slimmer height and larger hit area for toggle */
-  .nav {
-    height: 48px;
-    padding: 0 12px;
-  }
-  .nav .brand {
-    font-size: 1rem;
-  }
-
-  /* Preview container – reduced height */
-  .visualizer-preview-container {
-    height: 200px;
-  }
-
-  /* Safe‑area insets for iOS */
-  .hero,
-  .nav {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
 }
 
 .nav.nav-scrolled .theme-toggle {
@@ -1860,55 +1755,57 @@ body.theme-dark .button-secondary:focus-visible {
 
 .gallery-grid-premium {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 160px;
-  gap: 0; /* Zero gap for seamless collage */
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 200px;
+  gap: 4px; /* Ultra-tight for mosaic look */
   background: var(--bg);
-  border-radius: var(--radius-lg);
+  padding: 4px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid var(--line-strong);
 }
 
 @media (max-width: 1200px) {
   .gallery-grid-premium {
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 140px;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .gallery-grid-premium {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 140px;
+    gap: 2px;
+    padding: 2px;
   }
 }
 
 .gallery-item {
   position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
   background: var(--bg-soft);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator */
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .gallery-item:hover {
-  z-index: 10;
-  transform: scale(1.05);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-strong);
+  z-index: 2;
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: grayscale(20%) contrast(1.05);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover img {
   transform: scale(1.1);
-  filter: grayscale(0%) contrast(1.1);
 }
 
 /* Bento Grid Spacing */
