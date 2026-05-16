@@ -1740,17 +1740,39 @@ body.theme-dark .button-secondary:focus-visible {
   backdrop-filter: blur(8px);
 }
 
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.gallery-filter-btn {
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+}
+
 .gallery-filter-btn:hover {
-  background: var(--accent-soft);
   border-color: var(--accent);
-  transform: translateY(-2px);
+  background: var(--accent-soft);
+  transform: translateY(-3px);
 }
 
 .gallery-filter-btn.is-active {
   background: var(--accent);
-  border-color: var(--accent);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(13, 125, 184, 0.25);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(13, 125, 184, 0.3);
 }
 
 .gallery-grid-premium {
@@ -1774,27 +1796,51 @@ body.theme-dark .button-secondary:focus-visible {
   overflow: hidden;
   cursor: pointer;
   background: var(--bg-soft);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator */
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
 }
 
 .gallery-item:hover {
   z-index: 10;
-  transform: scale(1.05);
-  box-shadow: var(--shadow-strong);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(13, 125, 184, 0.25);
+  border-color: var(--accent);
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: grayscale(20%) contrast(1.05);
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-item:hover img {
   transform: scale(1.1);
-  filter: grayscale(0%) contrast(1.1);
+}
+
+.gallery-item span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+}
+
+.gallery-item:hover span {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Bento Grid Spacing */
@@ -1953,46 +1999,7 @@ body.theme-dark .toggle-slider {
   box-shadow: var(--ring);
 }
 
-.gallery-item span {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  background: rgba(13, 125, 184, 0.85);
-  backdrop-filter: blur(8px);
-  color: #fff;
-  opacity: 0;
-  transition: all 0.3s ease;
-  font-weight: 700;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-align: center;
-  pointer-events: none;
-}
 
-.gallery-item:hover span {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Overlay Glass Effect on Hover */
-.gallery-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(13, 125, 184, 0.15);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.gallery-item:hover::before {
-  opacity: 1;
-}
 
 .lightbox {
   position: fixed;
