@@ -1926,29 +1926,10 @@ body.theme-dark .toggle-slider {
   transform: translateX(24px);
 }
 
-.swatch-scroll-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 12px;
-}
-
-.visualizer-btn, .texture-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 16px;
-  background: var(--bg-soft);
-  border: 1px solid var(--line-strong);
-  border-radius: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.visualizer-btn.is-active, .texture-btn.is-active {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  box-shadow: var(--ring);
+.toggle-label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
 }
 
 .gallery-item span {
@@ -4328,77 +4309,32 @@ body.theme-dark .footer-social-icons a {
     grid-row: span 1;
   }
 
-  /* Visualizer Mobile Studio Mode */
-  .visualizer-preview-container {
-    height: 280px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 24px;
+  /* Visualizer Mobile Layout */
+  .visualizer-studio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .visualizer-main-stage {
-    height: 100%;
-    border-radius: 0;
+    height: 350px;
+    border-radius: 24px;
   }
 
-  .preview-hud {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 16px;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    z-index: 10;
+  .visualizer-dashboard {
+    padding: 24px;
+    border-radius: 24px;
   }
 
   .hud-item {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 14px;
-    border-radius: 12px;
-    flex: 1;
-  }
-
-  .swatch-scroll-container {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 4px 4px 16px;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
-  }
-
-  .swatch-scroll-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar Chrome/Safari */
-  }
-
-  .visualizer-btn, .texture-btn {
-    flex: 0 0 auto;
-    min-width: 90px;
-    height: auto;
-    padding: 12px;
+    padding: 8px 12px;
   }
 
   .hud-label {
-    display: block;
     font-size: 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 2px;
   }
 
   .hud-value {
-    display: block;
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
+    font-size: 12px;
   }
 
   /* App-like Slide-Up Reveals */
